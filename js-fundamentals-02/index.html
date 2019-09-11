@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Javascript Fundamentals 02</title>
+</head>
+<body>
+    <h1>Javascript Fundamentals 02</h1>
+    <button>Press me :)</button>
+
+    <script>
+        let myString = 'The revolution will not be televised';
+        myString;
+        //let badString = This is test;
+        let badString = myString;
+        
+        let sngQ = 'Single Quotes';
+        let dblQ = "Double Quotes";
+
+        //let anotherBadString = 'This is test";
+        const button = document.querySelector('button');
+
+        button.onclick = function() {
+            let name = prompt("What is your name");
+            console.log("Hello " + name);
+        }
+
+        let myDate = '19' + '67';
+        console.log(myDate);
+        
+        let myNum = prompt('Please, enter a number');
+        if(myNum >= 10) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+    </script>
+</body>
+</html>
