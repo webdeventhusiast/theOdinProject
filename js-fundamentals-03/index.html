@@ -24,8 +24,26 @@
         console.log(addSeven(userNum));
         */
 
+        let myText = 'I am text';
+        let changeMyText = myText.replace('text', 'string');
+        console.log(changeMyText);
+
+        let myArray = ['I', 'am', 'joined', 'array'];
+        let joinArray = myArray.join(' ');
+        console.log(joinArray);
+        console.log(Math.random());
+        let x = (0.2 * 10 + 0.1 * 10) / 10;
+
+        console.log(x);
         
-        
+        let myAnonymousFunction = function() {
+            console.log("I was called inside an anonymous function");
+            return "I was assigned to a variable";
+        }
+
+        //myAnonymousFunction();
+        let assignAnonymousFunction = myAnonymousFunction();
+        console.log(assignAnonymousFunction);
     </script>
 </body>
 </html>
