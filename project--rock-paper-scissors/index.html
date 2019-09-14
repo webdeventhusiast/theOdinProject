@@ -23,7 +23,7 @@
         }
 
         function playRound(playerSelection, computerSelection) {
-
+            
             playerSelection = playerSelection.toLowerCase();
 
             let playerWon = `You Won !!! ${playerSelection} beats ${computerSelection}`;
@@ -31,30 +31,37 @@
             let draw = `It is a draw, both players chose ${playerSelection}`;
             
             if(playerSelection == computerSelection) {
-                return draw;
+                console.log(draw);
+                return 'draw';
             } else {
                 if (playerSelection == 'rock') {
                     
                     if (computerSelection == 'paper') {
-                        return computerWon;
+                        console.log(computerWon);
+                        return 'computer';
                     } else if(computerSelection == 'scissors') {
-                        return playerWon;
+                        console.log(playerWon);
+                        return 'player';
                     }
 
                 } else if (playerSelection == 'paper') {
 
                     if (computerSelection == 'rock') {
-                        return playerWon;
+                        console.log(playerWon);
+                        return 'player';
                     } else if(computerSelection == 'scissors') {
-                        return computerWon;
+                        console.log(computerWon);
+                        return 'computer';
                     }
 
                 } else if (playerSelection == 'scissors') {
 
                     if (computerSelection == 'rock') {
-                        return computerWon;
+                        console.log(computerWon);
+                        return 'computer';
                     } else if(computerSelection == 'paper') {
-                        return playerWon;
+                        console.log(playerWon);
+                        return 'player';
                     }
 
                 } else {
@@ -64,7 +71,44 @@
 
         }
 
-        console.log(playRound('rock', computerPlay()));
+        
+        //console.log(playRound(computerPlay(), computerPlay()));
+
+        function game() {
+            let winner = '';
+            let playerPoint = 0;
+            let computerPoint = 0;
+
+            
+
+            for(let i = 0; i < 5; i++) {
+                let promptMe = prompt("'Please choose one of the following options: rock, paper, scissors.'");
+                let winner = playRound(promptMe, computerPlay());
+
+                if (winner == 'player') {
+                    playerPoint++;
+                } else if (winner == 'computer') {
+                    computerPoint++;
+                } else if (winner == 'draw') {
+                    playerPoint = (playerPoint * 10 + 0.5 * 10) / 10;
+                    computerPoint = (computerPoint * 10 + 0.5*10) /10;
+                }
+            }
+
+            let playerWinMessage = `You won the game. You scored ${playerPoint}, computer scored - ${computerPoint}`;
+            let computerWinMessage = `You lost the game. You scored ${playerPoint}, computer scored - ${computerPoint}`;
+            let drawMessage = `The result is draw, both player and computer scored ${playerPoint}`;
+
+            if (playerPoint > computerPoint) {
+                return playerWinMessage;
+            } else if (playerPoint < computerPoint) {
+                return computerWinMessage;
+            } 
+
+            return drawMessage; 
+        }
+
+        console.log(game());
     </script>
 </body>
 </html>
