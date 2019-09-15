@@ -75,16 +75,21 @@
         //console.log(playRound(computerPlay(), computerPlay()));
 
         function game() {
-            let winner = '';
+            let winner;
             let playerPoint = 0;
             let computerPoint = 0;
 
-            
+            let promptMe;
 
             for(let i = 0; i < 5; i++) {
-                let promptMe = prompt("'Please choose one of the following options: rock, paper, scissors.'");
-                let winner = playRound(promptMe, computerPlay());
 
+                do {
+                    promptMe = prompt("Please choose one of the following options: rock, paper, scissors.");
+                    promptMe.toLowerCase();
+                } while (promptMe !== 'rock' && promptMe !== 'paper' && promptMe !== 'scissors');
+
+                winner = playRound(promptMe, computerPlay());
+                
                 if (winner == 'player') {
                     playerPoint++;
                 } else if (winner == 'computer') {
@@ -93,6 +98,7 @@
                     playerPoint = (playerPoint * 10 + 0.5 * 10) / 10;
                     computerPoint = (computerPoint * 10 + 0.5*10) /10;
                 }
+                
             }
 
             let playerWinMessage = `You won the game. You scored ${playerPoint}, computer scored - ${computerPoint}`;
