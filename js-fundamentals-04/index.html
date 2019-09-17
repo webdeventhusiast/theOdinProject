@@ -10,7 +10,10 @@
 <body>
     <h1>Arrays, Loops & TDD</h1>
     <script>
+        /*
         
+        //////////// Arrays ////////////
+
         let cars = ["BMW", "Audi", "Tesla", "Lamborghini", "Toyota", "Ferrari"];
 
         let carsToString = cars.toString();
@@ -34,7 +37,63 @@
 
         console.log(newCarsArray);
         console.log(slicedCars);
+        */
+
+        //////////// Loops ////////////
+
+        //task 4 on javascript.info
+
+        /*
+        for ( let i = 2; i <= 10; i += 2 ) {
+            console.log(i);
+        }
+        */
+        //task 5 on javascript.info
+
+        /*
+        for (let i = 0; i < 3; i++) {
+           alert( `number ${i}!` );
+        }
+        */
+        /*
+        let a = 0;
         
+        while (a < 3) {
+            console.log(`number ${a}!`);
+            a++;
+        }
+        */
+
+        //task 6 on javascript.info
+
+        /*
+        let userInput;
+
+        do {
+            userInput = prompt('Please enter a number higher than 100');
+        } while (+userInput < 100);
+        */
+
+        //task 7 on javascript.info
+
+        let maxNumber = prompt('Please enter integer higher than 2');
+        let primeNumbers = []
+        for (let i = 2; i <= +maxNumber; i++) {
+            let x;
+
+            for (let j = 2; j < i ; j++) {
+                x = i % j;
+                if (x == 0) {
+                    break;
+                }
+            }
+
+            if(x !== 0) {
+                primeNumbers.push(i);
+            }
+        }
+
+        console.log(primeNumbers);
     </script>
 </body>
 </html>
