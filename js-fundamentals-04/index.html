@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Fundamentals - Arrays, Loops & TDD</title>
+</head>
+<body>
+    <h1>Arrays, Loops & TDD</h1>
+    <script>
+        
+        let cars = ["BMW", "Audi", "Tesla", "Lamborghini", "Toyota", "Ferrari"];
+
+        let carsToString = cars.toString();
+        let carsJoin = cars.join(' ');
+
+        let newCarsArray = cars;
+
+        console.log(carsToString);
+        console.log(carsJoin);
+        
+        console.log(newCarsArray);
+        console.log(newCarsArray[1]);
+
+        //let deletedCar = cars.splice(2, 2, "Aston Martin", "Hummer");
+        let deletedCar = cars.splice(2, 2);
+        
+        let slicedCars = newCarsArray.slice(2);
+
+        console.log(cars);
+        console.log(deletedCar);
+
+        console.log(newCarsArray);
+        console.log(slicedCars);
+        
+    </script>
+</body>
+</html>

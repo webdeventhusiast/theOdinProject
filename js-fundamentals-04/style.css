@@ -1,0 +1,11 @@
+body {
+    background-color: #f8acff;
+    font-size: 16px;
+    font-family: 'Montserrat', 'Lato', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0 10%;
+}
+
+h1 {
+    font-weight: 700;
+    color: #060606;
+}
