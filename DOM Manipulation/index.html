@@ -28,17 +28,82 @@
         let controls = document.querySelector('.controls');
         console.dir(controls.previousElementSibling); */
 
+        // Assign variables to container and sample div block
         let myContainer = document.querySelector('#container');
         let myDivBlock = document.createElement('div');
 
+        // div
         myDivBlock.textContent = 'Hello World';
         myDivBlock.setAttribute('title', 'div-title');
         myDivBlock.classList.toggle('sample-class');
         myDivBlock.style.cssText = 'font-size: 24px; color: #060400;'; 
-        console.log(myDivBlock);
-
+        
         myContainer.appendChild(myDivBlock);
-        console.log(myContainer);
+
+        // p
+        let sampleParagraph = document.createElement('p');
+        sampleParagraph.textContent = `Hey, I'm Red!.`;
+        sampleParagraph.style.cssText = 'color: red;';
+        sampleParagraph.classList.toggle('class-para');
+
+        myContainer.appendChild(sampleParagraph);
+
+        // h3
+        let h3onJS = document.createElement('h3');
+        h3onJS.textContent = `I'm blue h3`;
+        h3onJS.setAttribute('title', 'h3-title');
+        h3onJS.classList.toggle('sample-h3');
+        h3onJS.style.color = 'blue';
+
+        myContainer.insertBefore(h3onJS, sampleParagraph);
+
+        // Another div
+        let myDiv = document.createElement('div');
+        myDiv.style.cssText = "border: 1px solid black; background-color: pink; padding: 0 30px; transition: 0.4s all;";
+
+        // h1
+        let h1onJS = document.createElement('h1');
+        h1onJS.innerText = 'I\'m in a div';
+
+        // p
+        let anotherParagraph = document.createElement('p');
+        anotherParagraph.textContent = 'ME TOO';
+
+        myDiv.appendChild(h1onJS);
+        myDiv.appendChild(anotherParagraph);
+        myContainer.appendChild(myDiv);
+
+        // button - hide
+        let sampleButton = document.createElement('button');
+
+        sampleButton.setAttribute('id', 'btn-hide');
+        sampleButton.classList.toggle('btn-main');
+        sampleButton.textContent = 'Hide!';
+        sampleButton.style.cssText = "padding: 10px 20px; background-color: red; color: #fff; border: 0px; margin-top: 20px; font-size: 18px; cursor: pointer;";
+
+        myContainer.appendChild(sampleButton);
+
+        // button - show
+
+        let sampleButton2 = document.createElement('button');
+        sampleButton2.setAttribute('id', 'btn-show');
+        sampleButton2.textContent = 'Show';
+        sampleButton2.style.cssText = "padding: 10px 20px; background-color: green; color: #fff; border: 0px; margin: 20px 0 0 20px; font-size: 18px; cursor: pointer;";
+
+        myContainer.appendChild(sampleButton2);
+
+        // add event listener
+        sampleButton.addEventListener('click', hideOnClick); 
+        sampleButton2.addEventListener('click', showOnClick);
+
+        function hideOnClick(e) {
+            myDiv.style.opacity = '0';
+        }
+
+        function showOnClick(e) {
+            myDiv.style.opacity = '1';
+        }
+
     </script>
     <script src="script.js"></script>
 </body>
