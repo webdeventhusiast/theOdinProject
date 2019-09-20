@@ -10,23 +10,35 @@
 <body>
     <h1>DOM Manipulation</h1>
     
-    <div id="container">
+    <!-- <div id="container">
         <div class="display">
 
         </div>
         <div class="controls">
             
         </div>
-    </div>
+    </div> -->
 
+    <div id="container"></div>
 
-    
     <script>
-        let container = document.querySelector('#container');
+        /* let container = document.querySelector('#container');
         console.dir(container.firstElementChild);
 
         let controls = document.querySelector('.controls');
-        console.dir(controls.previousElementSibling);
+        console.dir(controls.previousElementSibling); */
+
+        let myContainer = document.querySelector('#container');
+        let myDivBlock = document.createElement('div');
+
+        myDivBlock.textContent = 'Hello World';
+        myDivBlock.setAttribute('title', 'div-title');
+        myDivBlock.classList.toggle('sample-class');
+        myDivBlock.style.cssText = 'font-size: 24px; color: #060400;'; 
+        console.log(myDivBlock);
+
+        myContainer.appendChild(myDivBlock);
+        console.log(myContainer);
     </script>
     <script src="script.js"></script>
 </body>

@@ -28,4 +28,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Folder created by VSCode editor
+.vscode/
+
 # End of https://www.gitignore.io/api/windows
+
